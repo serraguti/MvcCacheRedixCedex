@@ -1,0 +1,19 @@
+﻿@model Producto
+
+<div class="card" style="width: 18rem;">
+  <img src="@Model.Imagen" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">@Model.Nombre</h5>
+        <p class="card-text">Precio: @Model.Precio</p>
+    <p class="card-text">@Model.Descripcion</p>
+    <a asp-controller="Productos" asp-action="Index" class="btn btn-primary">
+        Volver al listado
+    </a>
+        <a asp-controller="Productos" 
+        asp-action="SeleccionarFavorito"
+        asp-route-idproducto="@Model.IdProducto"
+        class="btn btn-info">
+            Favorito
+    </a>
+  </div>
+</div>
